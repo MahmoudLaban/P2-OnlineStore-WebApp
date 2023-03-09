@@ -13,7 +13,7 @@ const orderSchema = new Schema({
       },
       amount: {
         type: Number
-      }
+      },
     }
   ],
   price: {
