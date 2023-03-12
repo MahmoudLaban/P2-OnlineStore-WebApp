@@ -2,8 +2,10 @@ const { Router } = require("express");
 const router = new Router();
 const Product = require("./../models/Product.model")
 const Order = require("./../models/Order.model")
-
 const mongoose = require("mongoose"); // <== has to be added
+
+// import middleware functions
+const { isLoggedIn, isLoggedOut, isAdmin } = require("../middleware/route-guard.js");
 
 // Route to retrieve all orders
 router.get("/orders", isLoggedIn, isAdmin, (req, res) => {

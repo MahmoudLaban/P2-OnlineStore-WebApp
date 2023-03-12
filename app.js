@@ -21,13 +21,13 @@ require("./config/session.config")(app);
 // call the module that runs the middlewares and pass the "app" constant as an argument 
 require("./config")(app);
 
-////////////////////////////////////////////////////////////////////////////////
-//don't understand this yet
-// // default value for title local
-// const projectName = "basic-auth";
-// const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
-// app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
-////////////////////////////////////////////////////////////////////////////////
+// The projectName variable is a string that holds the name of the project.
+// The capitalized function takes a string argument, capitalizes its first letter, and lowercases the rest of the letters. This function is used to ensure that the project name is correctly capitalized in the title property.
+const projectName = "basic-auth";
+const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
+//The locals object is used to store variables that are accessible to views rendered by the Express app.
+app.locals.title = `${capitalized(projectName)} created with Ironlauncher`;
+//////////////////////////////////////////////////////////////////////////////
 
 // define router for homepage endpoint authentication
 const index = require("./routes/index");
