@@ -3,6 +3,9 @@
 
 //create a new router object and assign it to the "router" constant
 const router = require("express").Router();
+const Cart = require('../models/cart');
+const Product = require('../models/product');
+const Order = require('../models/order');
 
 //call the "router" object get() method to define a route for the home page "/"
 //The request handler function takes three arguments: req, res, and next. req contains information about the incoming request, res is the response object, and next is a function that can be called to pass control to the next middleware function in the chain.  The response handler function calls the res.render() method, which renders the index view and sends the HTML to the client.

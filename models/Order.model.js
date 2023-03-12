@@ -14,7 +14,7 @@ const orderSchema = new Schema({
       //rename to quantity
       amount: {
         type: Number
-      }
+      },
     }
   ],
   price: {
