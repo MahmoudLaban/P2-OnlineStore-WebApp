@@ -6,6 +6,11 @@ require("dotenv/config");
 // import the ./db" module to connect to the database
 require("./db");
 
+//used in Express web applications to extract the data from the request body and make it available on the req.body object
+//arses incoming request bodies in a middleware before the handlers, and converts them to a usable format like JSON or URL-encoded data.
+//if a client submits a JSON object as part of an HTTP POST request, body-parser will parse the JSON object and make it available on the req.body object
+const bodyParser = require('body-parser');
+
 // import the express module
 const express = require("express");
 
@@ -19,7 +24,7 @@ const app = express();
 require("./config/session.config")(app);
 
 // call the module that runs the middlewares and pass the "app" constant as an argument 
-require("./config")(app);
+require("./config/config")(app);
 
 // The projectName variable is a string that holds the name of the project.
 // The capitalized function takes a string argument, capitalizes its first letter, and lowercases the rest of the letters. This function is used to ensure that the project name is correctly capitalized in the title property.
