@@ -1,5 +1,6 @@
 // Node.js application that uses the Express framework to handle HTTP requests
 
+
 // import the "dotenv" module to get access to environment variables, Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
 require("dotenv/config");
 
@@ -35,7 +36,7 @@ app.use("/", index);
 
 // define router for authentication endpoint 
 const authRouter = require("./routes/auth.routes.js_old"); // <== has to be added
-app.use("/", authRouter); // <== has to be added
+app.use("/", authRouter); // <== has to be added                                                                                                  
 
 // define router for products endpoint 
 const productRouter = require("./routes/product.routes"); // <== has to be added

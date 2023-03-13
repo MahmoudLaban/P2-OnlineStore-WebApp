@@ -1,8 +1,8 @@
 
 const { Router } = require("express");
 const router = new Router();
-const Product = require("./../models/Product.model")
-const Order = require("./../models/Order.model")
+const Product = require("../models/Product.model")
+const Order = require("../models/Order.model")
 
 const mongoose = require("mongoose"); // <== has to be added
 
@@ -148,8 +148,8 @@ router.get("/page", (req, res) => {
 
   let data = {}
 
-  if (req.session.lang == "es") {
-    data.welcome_greeting = "Bienvenido"
+  if (req.session.lang == "en") {
+    data.welcome_greeting = "Welcome"
     data.weather_today = "Tiempo para hoy"
   }
   else {
