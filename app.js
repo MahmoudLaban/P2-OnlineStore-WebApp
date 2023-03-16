@@ -70,6 +70,7 @@ hbs.registerHelper('lt', function(a, b) {
   return a < b;
 });
 
+<<<<<<< HEAD
 hbs.registerHelper('gt', function(a, b) {
   return a > b;
 });
@@ -117,6 +118,13 @@ hbs.registerHelper('unless_eq', function(a, b, opts) {
 });
 // Define the slice helper function
 const slice = (arr, start, end) => arr.slice(start, end)
+=======
+// call the session configuration module and pass the "app" constant as an argument
+require("./config_old/session.config")(app);
+
+// call the module that runs the middlewares and pass the "app" constant as an argument 
+require("./config_old/config")(app);
+>>>>>>> config
 
 // Register the slice helper with Handlebars
 hbs.registerHelper('slice', slice)
