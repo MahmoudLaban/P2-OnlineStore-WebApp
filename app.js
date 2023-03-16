@@ -21,10 +21,10 @@ const hbs = require("hbs");
 const app = express();
 
 // call the session configuration module and pass the "app" constant as an argument
-require("./config/session.config")(app);
+require("./config_old/session.config")(app);
 
 // call the module that runs the middlewares and pass the "app" constant as an argument 
-require("./config/config")(app);
+require("./config_old/config")(app);
 
 // The projectName variable is a string that holds the name of the project.
 // The capitalized function takes a string argument, capitalizes its first letter, and lowercases the rest of the letters. This function is used to ensure that the project name is correctly capitalized in the title property.
