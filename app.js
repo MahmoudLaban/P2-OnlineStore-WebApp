@@ -20,6 +20,9 @@ const hbs = require("hbs");
 //define app as an instance of express
 const app = express();
 
+
+
+
 // call the session configuration module and pass the "app" constant as an argument
 require("./config/session.config")(app);
 
