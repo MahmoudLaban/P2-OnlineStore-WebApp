@@ -5,7 +5,7 @@ const Product = require("./../models/Product.model")
 const Order = require("./../models/Order.model")
 const mongoose = require("mongoose"); // <== has to be added
 // import middleware functions
-const { isLoggedIn, isLoggedOut, isAdmin } = require("../middleware/route-guard.js");
+const { isLoggedIn, isLoggedOut, isAdmin } = require("../middleware_old/route-guard.js");
 
 // Route to retrieve all products
 router.get("/products", isLoggedIn, async (req, res, next) => {
