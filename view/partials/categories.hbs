@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md navbar-custom navbar-dark">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse mx-auto order-0" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item {{#if (eq pageName 'All Products')}}active{{/if}}">
+        <a class="nav-link" href="/products/">All</a>
+      </li>
+
+      {{#if categories}}
+        {{#each categories}}
+          <li class="nav-item {{#if (eq pageName title)}}active{{/if}}">
+            <a class="nav-link" href="/products/{{slug}}">{{title}}</a>
+          </li>
+        {{/each}}
+      {{/if}}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,90 @@
+{{> partials/header }}
+{{> partials/categories }}
+<div class="container cart">
+  {{#if cart }}
+    {{#if (not cart.paid) }}
+      <div class="row">
+        <div class="col-md-11 col-sm-12 m-auto table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr >
+                <th>Product</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Quantity</th>
+                <th>&nbsp;</th>
+                <th>Total</th>
+                <th>Subtotal</th>
+                <th>&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each products }}
+                {{#if this }}
+                  <tr class="my-auto">
+                    <td>
+                      <a href="/products/{{ this.category.slug }}/{{ this._id }}">
+                        <img src="{{ this.imagePath }}" class="img-small image-fluid h-100 w-100" alt="image thumbnail" />
+                      </a>
+                    </td>
+                    <td>
+                      <div class="float-left mb-3">
+                        <a class="title-link" href="/products/{{ this.category.slug }}/{{ this._id }}">
+                          <h6 class="text-left">{{ this.title }}</h6> 
+                          <p class="text-left">Product No: {{ this.productCode }}</p>
+                        </a>
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      <a href="/add-to-cart/{{ this._id }}">
+                        <i class="fa fa-plus-square" aria-hidden="true"></i>
+                      </a>
+                    </td>
+                    <td class="text-center">
+                      <p class="qty-display pt-1">{{ this.qty }}</p>
+                    </td>
+                    <td class="text-center" >
+                      <a href="/reduce/{{ this._id }}">
+                        <i class="fa fa-minus-square" aria-hidden="true"></i>
+                      </a>
+                    </td>
+                    <td>$ {{ this.price }}</td>
+                    <td>$ {{ this.totalPrice }}</td>
+                    <td>
+                      <a href="/removeAll/{{ this._id }}" class="btn btn-danger btn-sm button-style-danger">Remove all</a>
+                    </td>
+                  </tr>
+                {{/if}}
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr>
+      <div class="row mt-4 mr-auto">
+        <div class="col-md-11 col-sm-12 m-auto">
+          <strong>Total: ${{ cart.totalCost }}</strong>
+        </div>
+      </div>
+      <div class="row mt-2 mr-auto">
+        <div class="col-md-11 col-sm-12 m-auto">
+          <a href="/checkout" class="btn btn-dark button-style">Checkout</a>
+        </div>
+      </div>
+    {{else}}
+      <div class="row text-center">
+        <div class="col-md-9 col-sm-9 m-auto">
+          <h2>The cart is already paid</h2>
+        </div>
+      </div>
+    {{/if}}
+  {{else}}
+    <div class="row text-center">
+      <div class="col-md-9 col-sm-9 m-auto">
+        <h2>No items in the cart</h2>
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+{{> partials/footer }}

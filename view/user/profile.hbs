@@ -1,0 +1,61 @@
+{{> partials/header }}
+{{> partials/categories }}
+
+<div class="container">
+  <!-- Flash messages -->
+  <div class="row mt-3 mb-3">
+    <div class="col-md-8 m-auto">
+      {{#if successMsg}}
+        <div id="success" class="alert alert-success">
+          {{ successMsg }}
+        </div>
+      {{else}}
+        <div id="success" class="alert alert-success d-none"></div>
+      {{/if}}
+    </div>
+    <div class="col-md-8 m-auto">
+      {{#if errorMsg}}
+        <div id="error" class="alert alert-danger">
+          {{ errorMsg }}
+        </div>
+      {{else}}
+        <div id="error" class="alert alert-danger d-none"></div>
+      {{/if}}
+    </div>
+  </div>
+  <!-- User's orders -->
+
+  <div class="row mt-4">
+
+    <div class="col-md-8 m-auto">
+            <a href="/user/signup"><button class="float-right p-2 rounded-lg" >Continue Shopping ↗</button></a>
+      {{#if orders}}
+        {{#if orders.length}}
+          <h3>My orders</h3>
+          {{#each orders}}
+            <div class="card m-3">
+              <div class="card-body">
+                <p class="card-text ">
+                  <ul class="list-group">
+                    {{#each this.cart.items}}
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        {{ this.title }} | {{ this.qty }} Units
+                        <span class="badge badge-info badge-pill">{{ this.price }}</span>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </p>
+              </div>
+              <div class="card-footer">
+                <strong>Total Price: ${{ this.cart.totalCost }}</strong>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <h3 class="text-center" >You have not made any orders yet</h3>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{> partials/footer }}
