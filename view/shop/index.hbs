@@ -1,0 +1,74 @@
+{{> partials/header}} 
+{{> partials/categories}}
+
+<div class="container-fluid">
+
+  <!-- Breadcrumbs -->
+  <div class="row mt-2">
+    <div class="col-md-12 m-auto">
+      {{#if breadcrumbs}}
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          {{#each breadcrumbs}}
+          {{#if (not (startsWith name "?"))}}
+          <li class="breadcrumb-item" aria-current="page">
+            <a href="{{url}}">{{name}}</a>
+          </li>
+          {{/if}}
+          {{/each}}
+        </ol>
+      </nav>
+      {{/if}}
+    </div>
+  </div>
+  <!-- Page banner image -->
+{{#ifEqual pageName 'All Products'}}
+
+  <div class="text-center hero-container">
+    <img class="d-block w-100 hero-image" src="/images/banner-all-products.jpg"/>
+    <div class="hero-text">
+      <h1>{{pageName}}</h1>
+    </div>
+  </div>
+  {{else}} 
+  {{#each categories}}
+  {{#ifEqual pageName title}}
+  <div class="text-center hero-container">
+    <img class="d-block w-100 hero-image" src="/images/banner-{{slug}}.jpg"/>
+    <div class="hero-text">
+      <h1>{{pageName}}</h1>
+    </div>
+  </div>
+  {{/ifEqual}}
+  {{/each}}
+  {{/ifEqual}}
+  <hr class="gradient-style"/>
+  <!-- Contents -->
+  <div class="row pl-4 pr-4">
+    {{#each products}}
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-index-box">
+      <div class="single-product d-flex flex-column h-100">
+        <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
+          <img src="{{imagePath}}" alt="Bag" class="img-fluid"/>
+        </a>
+        <div class="product-info">
+          <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
+            <h6 class="mt-2 mb-2">{{title}}</h6>
+          </a>
+          <div class="price">${{price}}</div>
+        </div>
+        {{#if available}}
+        <a href="/add-to-cart/{{_id}}" class="btn btn-block btn-secondary button-style mt-auto mb-2">
+          Add to Shopping Cart
+        </a>
+        {{else}}
+        <a href="#" class="btn btn-block btn-danger button-style-danger mt-2 mb-2">
+          Sold out
+        </a>
+        {{/if}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+{{> partials/pagination}}
+{{> partials/footer}}

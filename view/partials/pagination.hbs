@@ -1,0 +1,35 @@
+{{#if pages}}
+  <ul class="pagination text-center">
+    {{#ifEqual current 1}}
+      <li class="page-item disabled"><a class="page-link">Previous</a></li>
+    {{else}}
+      <li class="page-item"><a class="page-link" href="{{home}}page={{ add current -1}}">Previous</a></li>
+    {{/ifEqual}}
+
+    {{#if_gt (Number current) 5}}
+      {{#unless_eq i 1}}
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+      {{/unless_eq}}
+    {{/if_gt}}
+
+    {{#times 5}}
+      {{#if_and (if_lt (add i @index) pages) (if_gt (add i @index) 0)}}
+        {{#ifEqual i current}}
+          <li class="page-item active"><a class="page-link">{{i}}</a></li>
+        {{else}}
+          <li class="page-item"><a class="page-link" href="{{home}}page={{i}}">{{i}}</a></li>
+        {{/ifEqual}}
+      {{/if_and}}
+
+      {{#if_and (eq (add i @index) (add current 4)) (lt (add i @index) pages) }}
+        <li class="page-item disabled"><a class="page-link">...</a></li>
+      {{/if_and}}
+    {{/times}}
+
+    {{#ifEqual current pages}}
+      <li class="page-item disabled"><a class="page-link">Next</a></li>
+    {{else}}
+      <li class="page-item"><a class="page-link" href="{{home}}page={{add current 1}}">Next</a></li>
+    {{/ifEqual}}
+  </ul>
+{{/if}}
