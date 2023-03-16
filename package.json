@@ -20,11 +20,28 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+
+  "nodemon": "^2.0.7"
+  },
+  "main": "app.js",
+ "repository": {
+   "type": "git",
+   "url": "git+https://github.com/BodyYvesEL/P2-OnlineStore-WebApp.git"
+  },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+"bugs": {
+ "url": "https://github.com/BodyYvesEL/P2-OnlineStore-WebApp/issues"
+  },
+  "homepage": "https://github.com/BodyYvesEL/P2-OnlineStore-WebApp#readme",
+
     "nodemon": "^2.0.21"
   },
   "main": "app.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "description": ""
 }
