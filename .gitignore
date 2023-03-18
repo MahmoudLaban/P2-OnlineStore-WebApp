@@ -1,4 +1,4 @@
-# /node_modules
-# .env
-# /.adminbro
-# .vercel
+/node_modules
+.env
+/.adminbro
+.vercel
