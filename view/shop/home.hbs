@@ -92,7 +92,7 @@
       <div class="col-md-4 product-index-box">
         <div class="single-product d-flex flex-column h-100">
           <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
-            <img src="{{imagePath}}" alt="Bag" class="img-fluid"/>
+            <img src="{{imagePath}}" alt="Grocery" class="img-fluid"/>
           </a>
           <div class="product-info">
             <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
@@ -119,11 +119,11 @@
   <!--Second slide-->
   <div class="carousel-item">
     <div class="row">
-      {{#each (slice categories 3 6)}}
+      {{#each (slice products 3 6)}}
       <div class="col-md-4 product-index-box">
         <div class="single-product d-flex flex-column h-100">
           <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
-            <img src="{{imagePath}}" alt="Bag" class="img-fluid"/>
+            <img src="{{imagePath}}" alt="Grocery" class="img-fluid"/>
           </a>
           <div class="product-info">
             <a class="title-link" href="/products/{{category.slug}}/{{_id}}">
@@ -150,11 +150,11 @@
  <!--Third slide-->
 <div class="carousel-item">
   <div class="row">
-    {{#each (slice categories 6 9)}}
+    {{#each (slice products 6 9)}}
     <div class="col-md-4 product-index-box">
       <div class="single-product d-flex flex-column h-100">
         <a class="title-link" href="/products/{{this.category.slug}}/{{this._id}}">
-          <img src="{{this.imagePath}}" alt="Bag" class="img-fluid">
+          <img src="{{this.imagePath}}" alt="Grocery" class="img-fluid">
         </a>
         <div class="product-info">
           <a class="title-link" href="/products/{{this.category.slug}}/{{this._id}}">

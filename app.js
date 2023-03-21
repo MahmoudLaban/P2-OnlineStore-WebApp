@@ -35,6 +35,17 @@ hbs.registerHelper('ifEqual', function (arg1, arg2, options) {
 hbs.registerHelper('not', function (value) {
   return !value
 })
+
+/*
+hbs.registerHelper('startsWith', function (str, prefix, options) {
+  return str.startsWith(prefix)
+    ? (options.fn ? options.fn(this) : '')
+    : (options.inverse ? options.inverse(this) : '')
+})
+*/
+
+
+
 hbs.registerHelper('startsWith', function (str, prefix, options) {
   return str.startsWith(prefix)
     ? options.fn(this)
@@ -42,6 +53,8 @@ hbs.registerHelper('startsWith', function (str, prefix, options) {
     ? options.inverse(this)
     : ''
 })
+
+
 hbs.registerHelper('isArray', function (value) {
   return Array.isArray(value)
 })
@@ -206,7 +219,7 @@ app.use(function (err, req, res, next) {
   res.render('error')
 })
 
-const port = process.env.PORT || 3007
+const port = process.env.PORT || 3009
 app.set('port', port)
 app.listen(port, () => {
   console.log('Server running at port ' + port)

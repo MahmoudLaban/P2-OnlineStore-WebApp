@@ -26,10 +26,6 @@
       {{/if_and}}
     {{/times}}
 
-    {{#ifEqual current pages}}
-      <li class="page-item disabled"><a class="page-link">Next</a></li>
-    {{else}}
-      <li class="page-item"><a class="page-link" href="{{home}}page={{add current 1}}">Next</a></li>
-    {{/ifEqual}}
+    <li class="page-item"><a class="page-link" href="{{home}}page={{add current 1}}">Next</a></li>
   </ul>
 {{/if}}

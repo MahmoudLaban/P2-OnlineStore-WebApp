@@ -15,15 +15,15 @@
     <div class="col-lg-8 col-md-12 text-justify m-auto">
       <!-- Introduction -->
       <div class="mt-4 mb-4">
-        <p>You are always welcome to contact us at anytime! Feel free to email us or phone us using our contact details below<br />
-          You can also visit us or call us at anytime during our working hours from <i>Sunday to Thursday: 9AM to 12PM.</i> <br />
-          We reply to our emails even during the weekends. So please do not hesitate to contact us.
+        <p>We value our customers and strive to provide the best shopping experience possible. If you have any questions, concerns, or feedback about our products or services, please don't hesitate to reach out to us.<br />
+          Our friendly and knowledgeable customer service team is available to assist you through phone, email, or in-store. We look forward to hearing from you! <i>Monday to Saturday: 10AM to 10PM.</i> <br />
+          Please feel free to contact us at any time, including weekends. We make it a priority to respond to all emails promptly, so you can expect to hear back from us no matter when you reach out. Don't hesitate to get in touch if you have any questions, comments, or concerns - we're here to help!
         </p>
       </div>
       <!-- Email contacts -->
       <div class="mt-4 mb-4">
         <p>
-          <h6><i>Contact us by email:</i></h6>
+          <h6><i>Email Contact:</i></h6>
         </p>
         <p>
           For general inquiries:
@@ -32,25 +32,12 @@
             <u>{{email}}</u>
           </a>
         </p>
-        <p>
-          For orders problems:
-          <a href="mailto:{{email}}">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>{{email}}</u>
-          </a>
-        </p>
-        <p>
-          For technical support:
-          <a href="mailto:{{email}}">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>{{email}}</u>
-          </a>
-        </p>
+       
       </div>
       <!-- Phone contacts -->
       <div class="mt-4 mb-4">
         <p>
-          <h6><i>Contact us by phone:</i></h6>
+          <h6><i>Phone Contact:</i></h6>
         </p>
         <p>
           Call center phone 1:
@@ -59,26 +46,13 @@
             555-555-5555
            </a>
         </p>
-        <p>
-          Call center phone 2:
-          <a href="tel:555-555-5555">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            555-555-5555
-           </a>
-        </p>
-        <p>
-          Whatsapp phone:
-          <a href="tel:555-555-5555">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            555-555-5555
-           </a>
-        </p>
+        
       </div>
     </div>
-    <!-- Contact us form -->
+    <!-- Contact form -->
     <div class="col-lg-8 col-md-12 m-auto">
       <div class="mt-5 mb-4">
-        <h2>Contact Us Form</h2>
+        <h2>Contact Form</h2>
         <!-- Error flash message -->
         {{#if errorMsg}}
           <div id="flash-msg" class="alert alert-danger">
@@ -98,7 +72,7 @@
           </div>
           <div class="form-group">
             <label for="message">Message contents</label>
-            <textarea class="form-control" name="message" id="message" rows="5" placeholder="Please write your message here..." required></textarea>
+            <textarea class="form-control" name="message" id="message" rows="5" placeholder="Please share your message here..." required></textarea>
           </div>
           <input type="hidden" name="_csrf" value="{{csrfToken}}" />
           <button type="submit" class="btn btn-primary button-style">

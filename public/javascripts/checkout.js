@@ -2,6 +2,8 @@
 // Initializes the Stripe API with the publishable API key, which allows the client-side code to interact with Stripe's servers.
 const stripe = Stripe("pk_test_51MlBRCFJwKeowJ2dBZEQ6CsIxuOV8BNmUpppAL6sVBKSh9bZdoBl7sJBn0yAzJplJYLVbV5pd4MrzOH1agbTa5Dj00NO0xFdJy");
 
+
+
 // Create an instance of Elements...
 // which allows you to create and customize payment inputs like card fields and buttons.
 const elements = stripe.elements();

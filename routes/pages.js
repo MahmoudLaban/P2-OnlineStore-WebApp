@@ -23,10 +23,10 @@ router.get("/shipping-policy", (req, res) => {
   });
 });
 
-//GET: display careers page
-router.get("/careers", (req, res) => {
-  res.render("pages/careers", {
-    pageName: "Careers",
+//GET: display corporation page
+router.get("/corporation", (req, res) => {
+  res.render("pages/corporation", {
+    pageName: "Corporation",
   });
 });
 

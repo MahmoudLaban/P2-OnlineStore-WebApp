@@ -4,6 +4,7 @@ const Product = require("../models/product");
 const Category = require("../models/category");
 var moment = require("moment");
 
+/*
 // GET: display all products
 router.get("/", async (req, res) => {
   const successMsg = req.flash("success")[0];
@@ -34,6 +35,47 @@ router.get("/", async (req, res) => {
     res.redirect("/");
   }
 });
+
+*/
+
+// GET: display all products
+router.get("/", async (req, res) => {
+  const successMsg = req.flash("success")[0];
+  const errorMsg = req.flash("error")[0];
+  const totalCount = await Product.count();
+  const perPage = 8;
+  let page = parseInt(req.query.page) || 1;
+
+  try {
+    const products = await Product.find({})
+      .sort("-createdAt")
+      .skip(perPage * (page - 1))
+      .limit(perPage)
+      .populate("category");
+
+    const count = products.length;
+
+    res.render("shop/index", {
+      pageName: "All Products",
+      products,
+      successMsg,
+      errorMsg,
+      current: page,
+      breadcrumbs: null,
+      home: "/products/?",
+      pages: Math.ceil(totalCount / perPage),
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+
+
+
+
+
 
 // GET: search box
 router.get("/search", async (req, res) => {
