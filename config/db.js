@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => { // Imports the Mongoose library which is a MongoDB object modeling tool designed to work in an asynchronous environment.
   try {
-    const uri = process.env.MONGO_URI || "mongodb://localhost/bags-ecommerce";
+    const uri = process.env.MONGO_URI || "mongodb://localhost/super market";
     await mongoose
       .connect(uri, {
         useNewUrlParser: true,
